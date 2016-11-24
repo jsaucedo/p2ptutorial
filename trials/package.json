@@ -1,0 +1,15 @@
+{
+  "name": "p2ptutorial",
+  "version": "1.0.0",
+  "description": "implementation of https://mafintosh.github.io/p2p-workshop/build/01.html and so on",
+  "main": "trials.js",
+  "scripts": {
+    "test": "standard",
+    "start": "node trials.js"
+  },
+  "author": "jsaucedo",
+  "license": "ISC",
+  "devDependencies": {
+    "standard": "^8.6.0"
+  }
+}
