@@ -1,7 +1,7 @@
 {
   "name": "p2ptutorial",
   "version": "1.0.0",
-  "description": "implementation of https://mafintosh.github.io/p2p-workshop/build/01.html and so on",
+  "description": "trials with net module",
   "main": "trials.js",
   "scripts": {
     "test": "standard",
