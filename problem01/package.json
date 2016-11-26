@@ -1,0 +1,15 @@
+{
+  "name": "problem01",
+  "version": "1.0.0",
+  "description": "solution for https://mafintosh.github.io/p2p-workshop/build/01.html",
+  "main": "server.js",
+  "scripts": {
+    "test": "standard",
+    "start": "node server.js"
+  },
+  "author": "jsaucedo",
+  "license": "ISC",
+  "devDependencies": {
+    "standard": "^8.6.0"
+  }
+}
