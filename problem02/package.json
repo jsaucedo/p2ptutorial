@@ -4,7 +4,8 @@
   "description": "solution for https://mafintosh.github.io/p2p-workshop/build/02.html",
   "main": "server.js",
   "scripts": {
-    "test": "standard"
+    "test": "standard",
+    "start": "node server.js"
   },
   "author": "jsaucedo",
   "license": "ISC",
