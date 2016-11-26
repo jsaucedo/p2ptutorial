@@ -1,50 +1,50 @@
 var net = require('net')
 
-var server = net.createServer((server) => {
+var server = net.createServer((socket) => {
   // 'connection' listener
   console.log('client connected')
 
-  server.on('end', () => {
+  socket.on('end', () => {
     console.log('client disconnected')
   })
 
-  server.on('data', (data) => {
+  socket.on('data', (data) => {
     console.log('data is: ', data)
-    console.log('server.bytesRead is in connection: ', server.bytesRead)
-    server.write('got it \n')
-    /*  server.pause()
+    console.log('socket.bytesRead is in connection: ', socket.bytesRead)
+    socket.write('got it \n')
+    /*  socket.pause()
       setTimeout(() => {
-        server.resume()
+        socket.resume()
         console.log('volvio todo a la normalidad')
       }, 5000) */
-    //  server.destroy()
-    //  server.end('cierro')
+    //  socket.destroy()
+    //  socket.end('cierro')
   })
 
-  server.on('timeout', () => {
+  socket.on('timeout', () => {
     console.log('timeoutee')
   })
-  server.setTimeout(5000)
+  socket.setTimeout(5000)
   /*
   DID NOTHING AFTER PLAYING WITH WRITE ON 'DATA'
-  server.on('drain', () => {
+  socket.on('drain', () => {
     console.log('buffer empty after sending response')
   }) */
-  console.log('server.localAddress is: ', server.localAddress)
-  console.log('server.localPort is: ', server.localPort)
-  console.log('server.bytesRead is: ', server.bytesRead)
-  console.log('server.remoteAddress is: ', server.remoteAddress)
-  console.log('server.remotePort is: ', server.remotePort)
+  console.log('socket.localAddress is: ', socket.localAddress)
+  console.log('socket.localPort is: ', socket.localPort)
+  console.log('socket.bytesRead is: ', socket.bytesRead)
+  console.log('socket.remoteAddress is: ', socket.remoteAddress)
+  console.log('socket.remotePort is: ', socket.remotePort)
   /* FOR CLIENT
-  server.on('lookup', (err, address, family, host) => {
+  socket.on('lookup', (err, address, family, host) => {
     console.log('err is: ', err)
     console.log('address is: ', address)
     console.log('family is: ', family)
     console.log('host is: ', host)
   }) */
 
-  server.write('hello\r\n')
-  server.pipe(server)
+  socket.write('hello\r\n')
+  socket.pipe(socket)
 }).on('error', (err) => {
   // handle errors here
   throw err
